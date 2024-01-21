@@ -18,7 +18,7 @@ class NewsApp(QWidget):
 
         fetch_button = QPushButton("Fetch News")
         fetch_button.clicked.connect(self.fetch_news)
-        fetch_button.setStyleSheet("background-color: #87CEEB; color: #FFFFFF;")  # Set button color and text color
+        fetch_button.setStyleSheet("background-color: #87CEEB; color: #000000;")  # Set button color and text color
         layout.addWidget(fetch_button)
 
         self.setLayout(layout)
@@ -51,7 +51,7 @@ class NewsApp(QWidget):
             first_5_headlines = news_articles[:5]
             last_5_headlines = news_articles[-5:]
 
-            self.news_browser.append("<b>Top 5 Most Reported Stories:</b>")
+            self.news_browser.append("<b> 5 Most Reported Stories:</b>")
             self.news_browser.append("<br>")  # Add an extra line for spacing
 
             for idx, article in enumerate(first_5_headlines, start=1):
@@ -60,7 +60,7 @@ class NewsApp(QWidget):
 
             self.news_browser.append("<br>")  # Add an extra line for spacing
 
-            self.news_browser.append("<b>Top 5 Least Reported Stories:</b>")
+            self.news_browser.append("<b> 5 Least Reported Stories:</b>")
             self.news_browser.append("<br>")  # Add an extra line for spacing
 
             for idx, article in enumerate(last_5_headlines, start=len(news_articles) - 4):
